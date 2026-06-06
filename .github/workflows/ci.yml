@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with docker image
-        run: docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ./app
+        run: docker build --no-cache -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ./app
 
       - name: Tag as latest
         run: docker tag ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ${{env.IMAGE_NAME}}:latest
