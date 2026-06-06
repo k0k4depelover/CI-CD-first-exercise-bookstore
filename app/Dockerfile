@@ -7,9 +7,13 @@ RUN groupadd -r bookvault && useradd -r -g bookvault -s /bin/false bookvault
 
 WORKDIR /app
 
+RUN pip install --no-cache-dir --upgrade pip wheel "jaraco.context>=6.1.0"
+
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt && \
-	pip install --no-cache-dir --upgrade "jaraco.context>=6.1.0" "wheel>=0.46.2"
+
+
 COPY . .
 
 RUN chown -R bookvault:bookvault /app
