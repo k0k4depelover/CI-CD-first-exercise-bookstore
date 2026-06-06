@@ -28,7 +28,7 @@ jobs:
           pip install pytest flake8
 
       - name: Linter Validation
-        run: flake8 app/ --max-line-lenght=120
+        run: flake8 app/ --max-line-length=120
 
       - name: Run tests
         run: pytest tests/ -v
