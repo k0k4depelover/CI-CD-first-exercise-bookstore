@@ -1,0 +1,4 @@
+# Build tools de la imagen base python:3.11-slim
+# No son dependencias runtime de la aplicación
+CVE-2026-23949
+CVE-2026-24049
