@@ -28,7 +28,7 @@ jobs:
           pip install pytest flake8
 
       - name: Linter Validation
-        run: flake8 app/ --max-lenght=120
+        run: flake8 app/ --max-line-lenght=120
 
       - name: Run tests
         run: pytest tests/ -v
@@ -39,10 +39,10 @@ jobs:
     needs: test
     steps:
 
-      - name: Set up Test
+      - name: Check repository
         uses: actions/checkout@v4
 
-      - name: Build with docker compose
+      - name: Build with docker image
         run: docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} ./app
 
       - name: Tag as latest
@@ -79,11 +79,4 @@ jobs:
           severity: "CRITICAL, HIGH"
 
 
-
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
