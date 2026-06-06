@@ -39,7 +39,7 @@ jobs:
     needs: test
     permissions:
       contents: read
-      package: write
+      packages: write
     steps:
 
       - name: Check repository
