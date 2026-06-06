@@ -2,5 +2,5 @@
 max-line-length = 120
 exclude= .git,__pycache__,venv
 per-file-ignores =
-	app/main.py:F401
-	app/wsgi.py:E302
+	app/main.py:E302
+	app/wsgi.py:F401
