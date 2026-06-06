@@ -1,5 +1,5 @@
 [flake8]
-max-line-length=120
+max-line-length = 120
 exclude= .git,__pycache__,venv
 per-file-ignores =
 	app/main.py:F401
